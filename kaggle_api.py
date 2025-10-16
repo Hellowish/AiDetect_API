@@ -6,8 +6,11 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.layers import TextVectorization
 import pickle
 
-MODEL_PATH = r"C:\Users\p0931\OneDrive\文件\OneDrive\桌面\kaggleAPI\AIDetect.h5"
-VOCAB_PATH = r"C:\Users\p0931\OneDrive\文件\OneDrive\桌面\kaggleAPI\vocab.pkl"  # 你先用 notebook 生成這個詞表檔案
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "AIDetect.h5")
+VOCAB_PATH = os.path.join(BASE_DIR, "vocab.pkl")
 
 model = tf.keras.models.load_model(MODEL_PATH)
 
